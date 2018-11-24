@@ -3,7 +3,7 @@
 #include<cmath>
 #include<locale.h>
 
-float main()
+int main()
 {
 	setlocale(LC_ALL, "");
 
@@ -77,7 +77,7 @@ float main()
 
 	// Task 4.
 
-	int x, y, c = 1;
+	/*int x, y, c = 1;
 	do
 	{
 		c++;
@@ -104,7 +104,7 @@ float main()
 		{
 			printf("Вы ввели значения <=0, попробуйте еще раз \n\n");
 		}
-	} while (c < 2);
+	} while (c < 5); */
 
 	// Task 5.
 
