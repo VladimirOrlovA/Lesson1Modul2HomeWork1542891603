@@ -109,5 +109,5 @@ float main()
 	// Task 5.
 
 
-	system("pause"); 111
+	system("pause");
 }
