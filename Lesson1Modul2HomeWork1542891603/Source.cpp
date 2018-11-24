@@ -90,6 +90,7 @@ int main()
 		{
 			if (y > 0)
 			{
+				
 				if (x > y)
 				{
 					printf("x>y, x/y=%f \n\n", (double)x / (double)y);
@@ -99,16 +100,21 @@ int main()
 					printf("y/x=%f \n\n", (double)y / (double)x);
 				}
 			}
+			else
+			{
+				printf("Вы ввели значение <=0, попробуйте еще раз \n\n");
+			}
 		}
 		else
 		{
-			printf("Вы ввели значения <=0, попробуйте еще раз \n\n");
+			printf("Вы ввели значение <=0, попробуйте еще раз \n\n");
 		}
-	} while (c < 5);*/
+	} while (c < 5); */
 
 	// Task 5.
 
-	int x, y, z, m, n, k;
+	int x, y, z, k;
+	double m,n,p;
 
 	printf("Enter x = ");
 	scanf_s("%d", &x);
@@ -117,15 +123,96 @@ int main()
 	printf("Enter z = ");
 	scanf_s("%d", &z);
 
-	m = (double)(x + y + z) / (double)3;
-	
-	if (x < y)
+	// проверка значений x,y,z > 0 
+
+	/*if (x > 0)
 	{
-		if(x<z)
+		if (y > 0)
 		{
-			printf("x наименьшее из x,y,z", x);
+			if (z > 0)
+			{
+
+				// определяем ср ариф
+				m = (double)(x + y + z) / 3;
+				printf("\nсреднее значение введенных чисел m = %f \n", m);
+
+
+				// определяем меньшее значение из x,y,z и присваиваем его k 
+				if (x < y)
+				{
+					if (x < z)
+					{
+						printf("\nx=%d меньшее из x,y,z тогда k=%d\n", x, x);
+						k = x;
+					}
+				}
+
+				if (y < x)
+				{
+					if (y < z)
+					{
+						printf("\ny=%d меньшее из x,y,z тогда k=%d\n", y, y);
+						k = y;
+					}
+				}
+
+				if (z < x)
+				{
+					if (z < y)
+					{
+						printf("\nz=%d меньшее из x,y,z тогда k=%d\n", z, z);
+						k = z;
+					}
+				}
+
+				// определяем большее значение из x,y,z и присваиваем его n 
+				if (x > y)
+				{
+					if (x > z)
+					{
+						printf("\nx=%d , большее из x,y,z тогда n=%d\n", x, x);
+						n = x;
+					}
+				}
+
+				if (y > x)
+				{
+					if (y > z)
+					{
+						printf("\ny=%d большее из x,y,z тогда n=%d\n", y, y);
+						n = y;
+					}
+				}
+
+				if (z > x)
+				{
+					if (z > y)
+					{
+						printf("\nz=%d большее из x,y,z тогда n=%d\n", z, z);
+						n = z;
+					}
+				}
+
+				p = (double)m *(double)n / k;
+				printf("\nm *n / k = %f \n\n\n", p);
+			}
+			else
+			{
+				printf("Вы ввели значения <=0, попробуйте еще раз \n\n");
+			}
+		}
+		else
+		{
+			printf("Вы ввели значения <=0, попробуйте еще раз \n\n");
 		}
 	}
+	else
+	{
+		printf("Вы ввели значения <=0, попробуйте еще раз \n\n");
+	}*/
+
+	// Task 6.
+
 
 	system("pause");
 }
