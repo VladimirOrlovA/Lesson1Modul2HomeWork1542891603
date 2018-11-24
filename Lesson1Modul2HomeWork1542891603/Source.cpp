@@ -113,7 +113,7 @@ int main()
 
 	// Task 5.
 
-	int x, y, z, k;
+	/*int x, y, z, k;
 	double m,n,p;
 
 	printf("Enter x = ");
@@ -125,7 +125,7 @@ int main()
 
 	// проверка значений x,y,z > 0 
 
-	/*if (x > 0)
+	if (x > 0)
 	{
 		if (y > 0)
 		{
@@ -212,6 +212,48 @@ int main()
 	}*/
 
 	// Task 6.
+
+
+	/*int a, b, c, count=1;
+
+	do
+	{
+		count++;
+
+	printf("Enter a = ");
+	scanf_s("%d", &a);
+	printf("Enter b = ");
+	scanf_s("%d", &b);
+	printf("Enter c = ");
+	scanf_s("%d", &c);
+
+	
+		if (a < b)
+		{
+			if (a < c)
+			{
+				printf("\na=%d меньшее из введенных значений a,b,c\n\n\n", a);
+			}
+		}
+
+		if (b < a)
+		{
+			if (b < c)
+			{
+				printf("\nb=%d меньшее из введенных значений a,b,c\n\n\n", b);
+			}
+		}
+
+		if (c < a)
+		{
+			if (c < b)
+			{
+				printf("\nc=%d меньшее из введенных значений a,b,c\n\n\n", c);
+			}
+		}
+	} while (count < 4);*/
+
+	// Task 7.
 
 
 	system("pause");
