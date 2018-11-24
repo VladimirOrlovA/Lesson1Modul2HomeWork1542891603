@@ -7,7 +7,7 @@ int main()
 {
 	setlocale(LC_ALL, "");
 
-	// Task 1.
+/// Task 1.
 
 	/*int a, d, q;
 	float r;
@@ -18,7 +18,8 @@ int main()
 	r = a % d;  // подумать как сделать переопределение r чтобы на экран выводилось 1, вместо 1,0000
 	printf("\nЧастное q = %d , остаток r = %f \n", q,r); */
 
-	// Task 2.
+
+/// Task 2.
 
 	/*int x, y;
 	printf("Enter x = ");
@@ -58,7 +59,8 @@ int main()
 	}
 	} */
 
-	// Task 3.
+
+/// Task 3.
 
 	/*int x, y;
 	printf("Enter x = ");
@@ -75,7 +77,8 @@ int main()
 	printf("y-x=%d \n", y-x);
 	} */
 
-	// Task 4.
+
+/// Task 4.
 
 	/*int x, y, c = 1;
 	do
@@ -111,7 +114,8 @@ int main()
 		}
 	} while (c < 5); */
 
-	// Task 5.
+
+/// Task 5.
 
 	/*int x, y, z, k;
 	double m,n,p;
@@ -211,8 +215,8 @@ int main()
 		printf("Вы ввели значения <=0, попробуйте еще раз \n\n");
 	}*/
 
-	// Task 6.
 
+/// Task 6.
 
 	/*int a, b, c, count=1;
 
@@ -232,7 +236,7 @@ int main()
 		{
 			if (a < c)
 			{
-				printf("\na=%d меньшее из введенных значений a,b,c\n\n\n", a);
+				printf("\na=%d наименьшее из введенных значений a,b,c\n\n\n", a);
 			}
 		}
 
@@ -240,7 +244,7 @@ int main()
 		{
 			if (b < c)
 			{
-				printf("\nb=%d меньшее из введенных значений a,b,c\n\n\n", b);
+				printf("\nb=%d наименьшее из введенных значений a,b,c\n\n\n", b);
 			}
 		}
 
@@ -248,12 +252,53 @@ int main()
 		{
 			if (c < b)
 			{
-				printf("\nc=%d меньшее из введенных значений a,b,c\n\n\n", c);
+				printf("\nc=%d наименьшее из введенных значений a,b,c\n\n\n", c);
 			}
 		}
 	} while (count < 4);*/
 
-	// Task 7.
+/// Task 7.
+
+int a, b, c, count = 1;
+
+do
+{
+	count++;
+
+	printf("Enter a = ");
+	scanf_s("%d", &a);
+	printf("Enter b = ");
+	scanf_s("%d", &b);
+	printf("Enter c = ");
+	scanf_s("%d", &c);
+
+
+	if (a > b)
+	{
+		if (a > c)
+		{
+			printf("\na=%d наибольшее из введенных значений a,b,c\n\n\n", a);
+		}
+	}
+
+	if (b > a)
+	{
+		if (b > c)
+		{
+			printf("\nb=%d наибольшее из введенных значений a,b,c\n\n\n", b);
+		}
+	}
+
+	if (c > a)
+	{
+		if (c > b)
+		{
+			printf("\nc=%d наибольшее из введенных значений a,b,c\n\n\n", c);
+		}
+	}
+} while (count < 4);
+
+/// Task 8.
 
 
 	system("pause");
