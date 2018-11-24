@@ -23,7 +23,7 @@ int main()
 	/*int x, y;
 	printf("Enter x = ");
 	scanf_s("%d", &x);
-	printf("Enter y = ", x);
+	printf("Enter y = ");
 	scanf_s("%d", &y);
 
 	if (x == 0)
@@ -83,7 +83,7 @@ int main()
 		c++;
 		printf("Enter x = ");
 		scanf_s("%d", &x);
-		printf("Enter y = ", x);
+		printf("Enter y = ");
 		scanf_s("%d", &y);
 
 		if (x > 0)
@@ -104,10 +104,28 @@ int main()
 		{
 			printf("Вы ввели значения <=0, попробуйте еще раз \n\n");
 		}
-	} while (c < 5); */
+	} while (c < 5);*/
 
 	// Task 5.
 
+	int x, y, z, m, n, k;
+
+	printf("Enter x = ");
+	scanf_s("%d", &x);
+	printf("Enter y = ");
+	scanf_s("%d", &y);
+	printf("Enter z = ");
+	scanf_s("%d", &z);
+
+	m = (double)(x + y + z) / (double)3;
+	
+	if (x < y)
+	{
+		if(x<z)
+		{
+			printf("x наименьшее из x,y,z", x);
+		}
+	}
 
 	system("pause");
 }
