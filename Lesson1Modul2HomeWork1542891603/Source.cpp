@@ -18,6 +18,40 @@ int main()
 	r = a % d;  // подумать как сделать переопределение r чтобы на экран выводилось 1, вместо 1,0000
 	printf("\nЧастное q = %d , остаток r = %f \n", q,r); */
 
+/// Task 2. var2 - ok
+
+	int x, y, count=1;
+
+	do
+	{
+		count++;
+
+		printf("Enter x = ");
+		scanf_s("%d", &x);
+		printf("Enter y = ");
+		scanf_s("%d", &y);
+
+		if (x == 0 && y == 0)
+		{
+			printf("x & y = 0 \n\n");
+		}
+
+		if (y == 0 && x != 0)
+		{
+			printf("12/x = %d \n\n", 12 / x);
+		}
+
+
+		if (x == 0 && y != 0)
+		{
+			printf("12/y = %d \n\n", 12 / y);
+		}
+
+		if (x != 0 && y != 0)
+		{
+			printf("144 / (x * y) = %d \n\n", 144 / (x * y));
+		}
+	} while (count < 5);
 
 /// Task 2.
 
@@ -216,6 +250,36 @@ int main()
 	}*/
 
 
+/// Task 6. var 2 - ok
+
+/*int a, b, c, count = 1;
+
+do
+{
+	count++;
+
+	printf("Enter a = ");
+	scanf_s("%d", &a);
+	printf("Enter b = ");
+	scanf_s("%d", &b);
+	printf("Enter c = ");
+	scanf_s("%d", &c);
+
+
+	if (a < b && a < c)
+	{
+		printf("\na=%d наименьшее из введенных значений a,b,c\n\n\n", a);
+	}
+	if (a > b && c > b)
+	{
+		printf("\nb=%d наименьшее из введенных значений a,b,c\n\n\n", b);
+	}
+	if (a > c && b > c)
+	{
+		printf("\nc=%d наименьшее из введенных значений a,b,c\n\n\n", c);
+	}
+} while (count < 4);*/
+
 /// Task 6.
 
 	/*int a, b, c, count=1;
@@ -259,7 +323,7 @@ int main()
 
 /// Task 7.
 
-int a, b, c, count = 1;
+/* int a, b, c, count = 1;
 
 do
 {
@@ -296,9 +360,10 @@ do
 			printf("\nc=%d наибольшее из введенных значений a,b,c\n\n\n", c);
 		}
 	}
-} while (count < 4);
+} while (count < 4); */
 
 /// Task 8.
+
 
 
 	system("pause");
