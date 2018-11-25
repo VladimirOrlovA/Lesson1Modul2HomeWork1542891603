@@ -18,9 +18,9 @@ int main()
 	r = a % d;  // подумать как сделать переопределение r чтобы на экран выводилось 1, вместо 1,0000
 	printf("\n„астное q = %d , остаток r = %f \n", q,r); */
 
-/// Task 2. var2 - ok
+/// Task 2. var2 - ok использовал логическое » - && и цикл дл€ проврки всех вариантов
 
-	int x, y, count=1;
+	/*int x, y, count=1;
 
 	do
 	{
@@ -51,7 +51,7 @@ int main()
 		{
 			printf("144 / (x * y) = %d \n\n", 144 / (x * y));
 		}
-	} while (count < 5);
+	} while (count < 5); */
 
 /// Task 2.
 
@@ -148,6 +148,78 @@ int main()
 		}
 	} while (c < 5); */
 
+	/// Task 5. var2 - ok использовал логическое » - && и цикл дл€ проврки всех вариантов
+
+	int x, y, z, k, count=1;
+	double m,n,p;
+	
+	//do
+	//{
+	//	count++;
+
+		printf("Enter x = ");
+		scanf_s("%d", &x);
+		printf("Enter y = ");
+		scanf_s("%d", &y);
+		printf("Enter z = ");
+		scanf_s("%d", &z);
+
+		// проверка значений x,y,z > 0
+
+		if (x > 0 && (y > 0) && (z > 0)
+		{
+
+			// определ€ем ср ариф
+			m = (double)(x + y + z) / 3;
+			printf("\nсреднее значение введенных чисел m = %f \n", m);
+
+
+			// определ€ем меньшее значение из x,y,z и присваиваем его k
+			if (x < y && x < z)
+			{
+				printf("\nx=%d меньшее из x,y,z тогда k=%d\n", x, x);
+				k = x;
+			}
+
+			if (y < x && y < z)
+			{
+				printf("\ny=%d меньшее из x,y,z тогда k=%d\n", y, y);
+				k = y;
+			}
+
+			if (z < x && z < y)
+			{
+				printf("\nz=%d меньшее из x,y,z тогда k=%d\n", z, z);
+				k = z;
+			}
+
+			// определ€ем большее значение из x,y,z и присваиваем его n
+			if (x > y && x > z)
+			{
+				printf("\nx=%d , большее из x,y,z тогда n=%d\n", x, x);
+				n = x;
+			}
+
+			if (y > x && y > z)
+			{
+				printf("\ny=%d большее из x,y,z тогда n=%d\n", y, y);
+				n = y;
+			}
+
+			if (z > x && z > y)
+			{
+				printf("\nz=%d большее из x,y,z тогда n=%d\n", z, z);
+				n = z;
+			}
+
+			p = (double)m *(double)n / k;
+			printf("\nm *n / k = %f \n\n\n", p);
+		}
+		
+		printf("¬ы ввели значени€ <=0, попробуйте еще раз \n\n");
+
+			
+	//} while (count < 5);
 
 /// Task 5.
 
@@ -250,7 +322,7 @@ int main()
 	}*/
 
 
-/// Task 6. var 2 - ok
+///// Task 6. var 2 - ok использовал логическое » - && и цикл дл€ проврки всех вариантов
 
 /*int a, b, c, count = 1;
 
@@ -321,7 +393,40 @@ do
 		}
 	} while (count < 4);*/
 
-/// Task 7.
+///// Task 7. var 2 - ok использовал логическое » - && и цикл дл€ проврки всех вариантов 
+
+	/*int a, b, c, count = 1;
+
+	do
+	{
+	count++;
+
+	printf("Enter a = ");
+	scanf_s("%d", &a);
+	printf("Enter b = ");
+	scanf_s("%d", &b);
+	printf("Enter c = ");
+	scanf_s("%d", &c);
+
+
+	if (a > b && a > c)
+	{
+	printf("\na=%d наибольшее из введенных значений a,b,c\n\n\n", a);
+	}
+
+	if (b > a && b > c)
+	{
+	printf("\nb=%d наибольшее из введенных значений a,b,c\n\n\n", b);
+	}
+
+	if (c > a && c > b)
+	{
+	printf("\nc=%d наибольшее из введенных значений a,b,c\n\n\n", c);
+	}
+	
+	} while (count < 4); */
+	
+/// Task 7. 
 
 /* int a, b, c, count = 1;
 
