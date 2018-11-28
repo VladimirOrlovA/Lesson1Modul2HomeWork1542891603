@@ -548,6 +548,7 @@ else
 		}
 		else { printf("Одно из введенных значений x, y, z = 0 \n\n"); } */
 
+/// How to use bool i don't know
 
 system("pause");
 }
