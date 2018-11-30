@@ -2,27 +2,32 @@
 #include<iostream>	// oперации ввода/вывода выполняются
 #include<cmath>		// работа с дробными числами
 #include<locale.h>	// подключает кириллицу
+#include<time.h>	// для использования генератора случайных чисел
+
 //using namespace std	// сообщает компилятору, что нужно использовать группу функций, которые являются частью стандартной библиотеки
 
-int main()			// Эта строка сообщает компилятору, что есть функция с именем main
+	void Task1 ()
+	{
+		int a, d;
+		
+	start:
 
-{
-	setlocale(LC_ALL, ""); //  подключает ввозможность вывода текста кириллицей
+		printf("\nВведите целое положительное число \"a\" : ");
+		scanf_s("%d", &a);
 
-/// Task 1.
+		printf("Введите целое положительное число \"d\" : ");
+		scanf_s("%d", &d);
 
-	/*int a, d, q;
-	float r;
+		if (a > 0 && d > 0)
+		{
+			printf("\nЧастное q = %d , остаток r = %d \n", a / d, a % d);
+		}
+		else { printf("\nВы ввели одно из чисел с отрицательным значением. Попробуйте еще раз... \n\n"); goto start; }
+	}
 
-	a = 5;
-	d = abs(2);	// брать значение по модулю
-	q = a / d;
-	r = a % d;  // подумать как сделать переопределение r чтобы на экран выводилось 1, вместо 1,0000
-	printf("\nЧастное q = %d , остаток r = %f \n", q,r); */
-
-/// Task 2. var2 - ok использовал логическое И - && и цикл для проврки всех вариантов
-
-		/*int x, y, count=1;
+	void Task2 () // var2 - ok использовал логическое И - && и цикл для проврки всех вариантов
+	{
+		int x, y, count=1;
 
 		do
 		{
@@ -53,11 +58,13 @@ int main()			// Эта строка сообщает компилятору, что есть функция с именем main
 			{
 				printf("144 / (x * y) = %d \n\n", 144 / (x * y));
 			}
-		} while (count < 5); */
+		} while (count < 5);
+	}
 
-/// Task 2. хорошо потренировался, но не использовал упрощение - логическую функцию "И". Смотреть вариант var2
 
-/*int x, y;
+
+/*/// Task 2. хорошо потренировался, но не использовал упрощение - логическую функцию "И". Смотреть вариант var2
+int x, y;
 printf("Enter x = ");
 scanf_s("%d", &x);
 printf("Enter y = ");
@@ -96,430 +103,446 @@ printf("144 / (x * y) = %d \n", 144 / (x * y));
 } */
 
 
-/// Task 3.
-
-/*int x, y;
-printf("Enter x = ");
-scanf_s("%d", &x);
-printf("Enter y = ", x);
-scanf_s("%d", &y);
-
-if (x > y)
-{
-printf("x>y, x-y=%d \n", x - y);
-}
-else
-{
-printf("y-x=%d \n", y-x);
-} */
-
-///// Task 4. var2 - ok использовал логическое И - && и цикл для проврки всех вариантов
-
-/*int x, y, count = 1;
-do
-{
-count++;
-printf("Enter x = ");
-scanf_s("%d", &x);
-printf("Enter y = ");
-scanf_s("%d", &y);
-
-if (x > 0 && y > 0) // проверка условия что введенные значения => 0
-{
-
-if (x > y)
-{
-printf("x>y, x/y=%f \n\n", (double)x / (double)y);
-}
-else
-{
-printf("y/x=%f \n\n", (double)y / (double)x);
-}
-}
-else
-{
-printf("Вы ввели значение <=0, попробуйте еще раз \n\n");
-}
-
-} while (count < 5); */
-
-/// Task 4.
-
-/*int x, y, c = 1;
-do
-{
-c++;
-printf("Enter x = ");
-scanf_s("%d", &x);
-printf("Enter y = ");
-scanf_s("%d", &y);
-
-if (x > 0)
-{
-if (y > 0)
-{
-
-if (x > y)
-{
-printf("x>y, x/y=%f \n\n", (double)x / (double)y);
-}
-else
-{
-printf("y/x=%f \n\n", (double)y / (double)x);
-}
-}
-else
-{
-printf("Вы ввели значение <=0, попробуйте еще раз \n\n");
-}
-}
-else
-{
-printf("Вы ввели значение <=0, попробуйте еще раз \n\n");
-}
-} while (c < 5); */
-
-/// Task 5. var2 - ok использовал логическое И - && и цикл для проврки всех вариантов
-
-/*int x, y, z, k, count=1;
-double m,n,p;
-
-do
-{
-count++;
-
-printf("Enter x = ");
-scanf_s("%d", &x);
-printf("Enter y = ");
-scanf_s("%d", &y);
-printf("Enter z = ");
-scanf_s("%d", &z);
-
-// проверка значений x,y,z > 0
-
-if (x > 0 && y > 0 && z > 0)
-{
-
-// определяем ср ариф
-m = (double)(x + y + z) / 3;
-printf("\nсреднее значение введенных чисел m = %f \n", m);
-
-
-// определяем меньшее значение из x,y,z и присваиваем его k
-if (x < y && x < z)
-{
-printf("\nx=%d меньшее из x,y,z тогда k=%d\n", x, x);
-k = x;
-}
-
-if (y < x && y < z)
-{
-printf("\ny=%d меньшее из x,y,z тогда k=%d\n", y, y);
-k = y;
-}
-
-if (z < x && z < y)
-{
-printf("\nz=%d меньшее из x,y,z тогда k=%d\n", z, z);
-k = z;
-}
-
-// определяем большее значение из x,y,z и присваиваем его n
-if (x > y && x > z)
-{
-printf("\nx=%d , большее из x,y,z тогда n=%d\n", x, x);
-n = x;
-}
-
-if (y > x && y > z)
-{
-printf("\ny=%d большее из x,y,z тогда n=%d\n", y, y);
-n = y;
-}
-
-if (z > x && z > y)
-{
-printf("\nz=%d большее из x,y,z тогда n=%d\n", z, z);
-n = z;
-}
-
-p = (double)m *(double)n / k;
-printf("\nm *n / k = %f \n\n\n", p);
-}
-else
-{
-printf("Вы ввели значения <=0, попробуйте еще раз \n\n");
-}
-
-} while (count < 5);*/
-
-/// Task 5.
-
-/*int x, y, z, k;
-double m,n,p;
-
-printf("Enter x = ");
-scanf_s("%d", &x);
-printf("Enter y = ");
-scanf_s("%d", &y);
-printf("Enter z = ");
-scanf_s("%d", &z);
-
-// проверка значений x,y,z > 0
-
-								if (x > 0)
-								{
-									if (y > 0)
-									{
-										if (z > 0)
-										{
-
-											// определяем ср ариф
-											m = (double)(x + y + z) / 3;
-											printf("\nсреднее значение введенных чисел m = %f \n", m);
-
-
-											// определяем меньшее значение из x,y,z и присваиваем его k
-											if (x < y)
-											{
-												if (x < z)
-												{
-													printf("\nx=%d меньшее из x,y,z тогда k=%d\n", x, x);
-													k = x;
-												}
-											}
-
-											if (y < x)
-											{
-												if (y < z)
-												{
-													printf("\ny=%d меньшее из x,y,z тогда k=%d\n", y, y);
-													k = y;
-												}
-											}
-
-											if (z < x)
-											{
-												if (z < y)
-												{
-													printf("\nz=%d меньшее из x,y,z тогда k=%d\n", z, z);
-													k = z;
-												}
-											}
-
-											// определяем большее значение из x,y,z и присваиваем его n
-											if (x > y)
-											{
-												if (x > z)
-												{
-													printf("\nx=%d , большее из x,y,z тогда n=%d\n", x, x);
-													n = x;
-												}
-											}
-
-											if (y > x)
-											{
-												if (y > z)
-												{
-													printf("\ny=%d большее из x,y,z тогда n=%d\n", y, y);
-													n = y;
-												}
-											}
-
-											if (z > x)
-											{
-												if (z > y)
-												{
-													printf("\nz=%d большее из x,y,z тогда n=%d\n", z, z);
-													n = z;
-												}
-											}
-
-											p = (double)m *(double)n / k;
-											printf("\nm *n / k = %f \n\n\n", p);
-										}
-										else
-										{
-											printf("Вы ввели значения <=0, попробуйте еще раз \n\n");
-										}
-									}
-									else
-									{
-										printf("Вы ввели значения <=0, попробуйте еще раз \n\n");
-									}
-								}
-								else
-								{
-									printf("Вы ввели значения <=0, попробуйте еще раз \n\n");
-								}*/
-
-
-/// Task 6. var 2 - ok использовал логическое И - && и цикл для проврки всех вариантов
-
-								/*int a, b, c, count = 1;
-
-								do
-								{
-									count++;
-
-									printf("Enter a = ");
-									scanf_s("%d", &a);
-									printf("Enter b = ");
-									scanf_s("%d", &b);
-									printf("Enter c = ");
-									scanf_s("%d", &c);
-
-
-									if (a < b && a < c)
-									{
-										printf("\na=%d наименьшее из введенных значений a,b,c\n\n\n", a);
-									}
-									if (a > b && c > b)
-									{
-										printf("\nb=%d наименьшее из введенных значений a,b,c\n\n\n", b);
-									}
-									if (a > c && b > c)
-									{
-										printf("\nc=%d наименьшее из введенных значений a,b,c\n\n\n", c);
-									}
-								} while (count < 4);*/
-
-								/// Task 6.
-
-									/*int a, b, c, count=1;
-
-									do
-									{
-										count++;
-
-									printf("Enter a = ");
-									scanf_s("%d", &a);
-									printf("Enter b = ");
-									scanf_s("%d", &b);
-									printf("Enter c = ");
-									scanf_s("%d", &c);
-
-
-										if (a < b)
-										{
-											if (a < c)
-											{
-												printf("\na=%d наименьшее из введенных значений a,b,c\n\n\n", a);
-											}
-										}
-
-										if (b < a)
-										{
-											if (b < c)
-											{
-												printf("\nb=%d наименьшее из введенных значений a,b,c\n\n\n", b);
-											}
-										}
-
-										if (c < a)
-										{
-											if (c < b)
-											{
-												printf("\nc=%d наименьшее из введенных значений a,b,c\n\n\n", c);
-											}
-										}
-									} while (count < 4);*/
-
-/// Task 7. var 2 - ok использовал логическое И - && и цикл для проврки всех вариантов 
-
-										/*int a, b, c, count = 1;
-
-										do
-										{
-										count++;
-
-										printf("Enter a = ");
-										scanf_s("%d", &a);
-										printf("Enter b = ");
-										scanf_s("%d", &b);
-										printf("Enter c = ");
-										scanf_s("%d", &c);
-
-
-										if (a > b && a > c)
-										{
-										printf("\na=%d наибольшее из введенных значений a,b,c\n\n\n", a);
-										}
-
-										if (b > a && b > c)
-										{
-										printf("\nb=%d наибольшее из введенных значений a,b,c\n\n\n", b);
-										}
-
-										if (c > a && c > b)
-										{
-										printf("\nc=%d наибольшее из введенных значений a,b,c\n\n\n", c);
-										}
-
-										} while (count < 4); */
-
-										/// Task 7. 
-
-										/* int a, b, c, count = 1;
-
-										do
-										{
-											count++;
-
-											printf("Enter a = ");
-											scanf_s("%d", &a);
-											printf("Enter b = ");
-											scanf_s("%d", &b);
-											printf("Enter c = ");
-											scanf_s("%d", &c);
-
-
-if (a > b)
-{
-if (a > c)
-{
-printf("\na=%d наибольшее из введенных значений a,b,c\n\n\n", a);
-}
-}
-
-if (b > a)
-{
-if (b > c)
-{
-printf("\nb=%d наибольшее из введенных значений a,b,c\n\n\n", b);
-}
-}
-
-if (c > a)
-{
-if (c > b)
-{
-printf("\nc=%d наибольшее из введенных значений a,b,c\n\n\n", c);
-}
-}
-} while (count < 4); */
-
-/// Task 8.
-
-/*int x = 2, y = 2, z = 4;
-
-if (pow(x, 2) + pow(y, 2) == pow(z, 2))
-{ printf("true\n"); }
-else { printf("false\n"); }*/
-
-/// Task 9.
-
-/*int x=2, y=2;
-
-if (x%y == 0 && y%x == 0)
-{	printf("true\n");}
-else
-{	printf("false\n");} */
-
-
-/// Task 10.
-
-/*		int x = 1, y = 5, z = 7;
+	void Task3()
+	{
+		int x, y;
+		printf("Enter x = ");
+		scanf_s("%d", &x);
+		printf("Enter y = ", x);
+		scanf_s("%d", &y);
+
+		if (x > y)
+		{
+			printf("x>y, x-y=%d \n", x - y);
+		}
+		else
+		{
+			printf("y-x=%d \n", y - x);
+		}
+	}
+
+	void Task4() // var2 - ok использовал логическое И - && и цикл для проврки всех вариантов
+	{
+		int x, y, count = 1;
+		do
+		{
+			count++;
+			printf("Enter x = ");
+			scanf_s("%d", &x);
+			printf("Enter y = ");
+			scanf_s("%d", &y);
+
+			if (x > 0 && y > 0) // проверка условия что введенные значения => 0
+			{
+
+				if (x > y)
+				{
+					printf("x>y, x/y=%f \n\n", (double)x / (double)y);
+				}
+				else
+				{
+					printf("y/x=%f \n\n", (double)y / (double)x);
+				}
+			}
+			else
+			{
+				printf("Вы ввели значение <=0, попробуйте еще раз \n\n");
+			}
+
+		} while (count < 5);
+	}
+
+	/* // Task4 ()
+	{
+
+		int x, y, c = 1;
+		do
+		{
+			c++;
+			printf("Enter x = ");
+			scanf_s("%d", &x);
+			printf("Enter y = ");
+			scanf_s("%d", &y);
+
+			if (x > 0)
+			{
+				if (y > 0)
+				{
+
+					if (x > y)
+					{
+						printf("x>y, x/y=%f \n\n", (double)x / (double)y);
+					}
+					else
+					{
+						printf("y/x=%f \n\n", (double)y / (double)x);
+					}
+				}
+				else
+				{
+					printf("Вы ввели значение <=0, попробуйте еще раз \n\n");
+				}
+			}
+			else
+			{
+				printf("Вы ввели значение <=0, попробуйте еще раз \n\n");
+			}
+		} while (c < 5);
+	}
+
+	void Task5 () // var2 - ok использовал логическое И - && и цикл для проврки всех вариантов
+	{
+		int x, y, z, k, count = 1;
+		double m, n, p;
+
+		do
+		{
+			count++;
+
+			printf("Enter x = ");
+			scanf_s("%d", &x);
+			printf("Enter y = ");
+			scanf_s("%d", &y);
+			printf("Enter z = ");
+			scanf_s("%d", &z);
+
+			// проверка значений x,y,z > 0
+
+			if (x > 0 && y > 0 && z > 0)
+			{
+
+				// определяем ср ариф
+				m = (double)(x + y + z) / 3;
+				printf("\nсреднее значение введенных чисел m = %f \n", m);
+
+
+				// определяем меньшее значение из x,y,z и присваиваем его k
+				if (x < y && x < z)
+				{
+					printf("\nx=%d меньшее из x,y,z тогда k=%d\n", x, x);
+					k = x;
+				}
+
+				if (y < x && y < z)
+				{
+					printf("\ny=%d меньшее из x,y,z тогда k=%d\n", y, y);
+					k = y;
+				}
+
+				if (z < x && z < y)
+				{
+					printf("\nz=%d меньшее из x,y,z тогда k=%d\n", z, z);
+					k = z;
+				}
+
+				// определяем большее значение из x,y,z и присваиваем его n
+				if (x > y && x > z)
+				{
+					printf("\nx=%d , большее из x,y,z тогда n=%d\n", x, x);
+					n = x;
+				}
+
+				if (y > x && y > z)
+				{
+					printf("\ny=%d большее из x,y,z тогда n=%d\n", y, y);
+					n = y;
+				}
+
+				if (z > x && z > y)
+				{
+					printf("\nz=%d большее из x,y,z тогда n=%d\n", z, z);
+					n = z;
+				}
+
+				p = (double)m *(double)n / k;
+				printf("\nm *n / k = %f \n\n\n", p);
+			}
+			else
+			{
+				printf("Вы ввели значения <=0, попробуйте еще раз \n\n");
+			}
+
+		} while (count < 5);
+	} */
+
+	void Task5()
+	{
+		int x, y, z, k;
+		double m, n, p;
+
+		start:
+
+		printf("Enter x = ");
+		scanf_s("%d", &x);
+		printf("Enter y = ");
+		scanf_s("%d", &y);
+		printf("Enter z = ");
+		scanf_s("%d", &z);
+
+		// проверка значений x,y,z > 0
+		
+		if (x > 0)
+		{
+			if (y > 0)
+			{
+				if (z > 0)
+				{
+
+					// определяем ср ариф
+					m = (double)(x + y + z) / 3;
+					printf("\nсреднее значение введенных чисел m = %f \n", m);
+
+
+					// определяем меньшее значение из x,y,z и присваиваем его k
+					if (x < y)
+					{
+						if (x < z)
+						{
+							printf("\nx=%d меньшее из x,y,z тогда k=%d\n", x, x);
+							k = x;
+						}
+					}
+
+					if (y < x)
+					{
+						if (y < z)
+						{
+							printf("\ny=%d меньшее из x,y,z тогда k=%d\n", y, y);
+							k = y;
+						}
+					}
+
+					if (z < x)
+					{
+						if (z < y)
+						{
+							printf("\nz=%d меньшее из x,y,z тогда k=%d\n", z, z);
+							k = z;
+						}
+					}
+
+					// определяем большее значение из x,y,z и присваиваем его n
+					if (x > y)
+					{
+						if (x > z)
+						{
+							printf("\nx=%d , большее из x,y,z тогда n=%d\n", x, x);
+							n = x;
+						}
+					}
+
+					if (y > x)
+					{
+						if (y > z)
+						{
+							printf("\ny=%d большее из x,y,z тогда n=%d\n", y, y);
+							n = y;
+						}
+					}
+
+					if (z > x)
+					{
+						if (z > y)
+						{
+							printf("\nz=%d большее из x,y,z тогда n=%d\n", z, z);
+							n = z;
+						}
+					}
+
+					p = (double)m *(double)n / k;
+					printf("\nm *n / k = %f \n\n\n", p);
+				}
+				else {printf("Вы ввели значения z <= 0, попробуйте еще раз... \n\n"); goto start;}
+			}
+			else {printf("Вы ввели значения y <= 0, попробуйте еще раз \n\n");	goto start;}
+		}
+		else { printf("Вы ввели значения x <= 0, попробуйте еще раз \n\n"); goto start; }
+	}
+
+
+	void Task6() //var 2 - ok использовал логическое И - && и цикл для проврки всех вариантов
+	{
+		int a, b, c, count = 1;
+
+		do
+		{
+			count++;
+
+			printf("Enter a = ");
+			scanf_s("%d", &a);
+			printf("Enter b = ");
+			scanf_s("%d", &b);
+			printf("Enter c = ");
+			scanf_s("%d", &c);
+
+
+			if (a < b && a < c)
+			{
+				printf("\na=%d наименьшее из введенных значений a,b,c\n\n\n", a);
+			}
+			if (a > b && c > b)
+			{
+				printf("\nb=%d наименьшее из введенных значений a,b,c\n\n\n", b);
+			}
+			if (a > c && b > c)
+			{
+				printf("\nc=%d наименьшее из введенных значений a,b,c\n\n\n", c);
+			}
+		} while (count < 4);
+	}
+
+	/* // Task7() тренировка
+	
+
+		int a, b, c, count = 1;
+
+		do
+		{
+			count++;
+
+			printf("Enter a = ");
+			scanf_s("%d", &a);
+			printf("Enter b = ");
+			scanf_s("%d", &b);
+			printf("Enter c = ");
+			scanf_s("%d", &c);
+
+
+			if (a < b)
+			{
+				if (a < c)
+				{
+					printf("\na=%d наименьшее из введенных значений a,b,c\n\n\n", a);
+				}
+			}
+
+			if (b < a)
+			{
+				if (b < c)
+				{
+					printf("\nb=%d наименьшее из введенных значений a,b,c\n\n\n", b);
+				}
+			}
+
+			if (c < a)
+			{
+				if (c < b)
+				{
+					printf("\nc=%d наименьшее из введенных значений a,b,c\n\n\n", c);
+				}
+			}
+		} while (count < 4);
+	*/
+
+	void Task7() //var 2 - ok использовал логическое И - && и цикл для проврки всех вариантов 
+	{
+		int a, b, c, count = 1;
+
+		do
+		{
+			count++;
+
+			printf("Enter a = ");
+			scanf_s("%d", &a);
+			printf("Enter b = ");
+			scanf_s("%d", &b);
+			printf("Enter c = ");
+			scanf_s("%d", &c);
+
+
+			if (a > b && a > c)
+			{
+				printf("\na=%d наибольшее из введенных значений a,b,c\n\n\n", a);
+			}
+
+			if (b > a && b > c)
+			{
+				printf("\nb=%d наибольшее из введенных значений a,b,c\n\n\n", b);
+			}
+
+			if (c > a && c > b)
+			{
+				printf("\nc=%d наибольшее из введенных значений a,b,c\n\n\n", c);
+			}
+
+		} while (count < 4);
+	}
+
+										
+
+		/* /// Task 7
+		int a, b, c, count = 1;
+
+		do
+		{
+			count++;
+
+			printf("Enter a = ");
+			scanf_s("%d", &a);
+			printf("Enter b = ");
+			scanf_s("%d", &b);
+			printf("Enter c = ");
+			scanf_s("%d", &c);
+
+
+			if (a > b)
+			{
+				if (a > c)
+				{
+					printf("\na=%d наибольшее из введенных значений a,b,c\n\n\n", a);
+				}
+			}
+
+			if (b > a)
+			{
+				if (b > c)
+				{
+					printf("\nb=%d наибольшее из введенных значений a,b,c\n\n\n", b);
+				}
+			}
+
+			if (c > a)
+			{
+				if (c > b)
+				{
+					printf("\nc=%d наибольшее из введенных значений a,b,c\n\n\n", c);
+				}
+			}
+		} while (count < 4);
+	*/
+
+
+	void Task8()
+	{
+
+		int x = 2, y = 2, z = 4;
+
+		if (pow(x, 2) + pow(y, 2) == pow(z, 2))
+		{
+			printf("true\n");
+		}
+		else { printf("false\n"); }
+	}
+
+	void Task9()
+	{
+
+		int x = 2, y = 2;
+
+		if (x%y == 0 && y%x == 0)
+		{
+			printf("true\n");
+		}
+		else
+		{
+			printf("false\n");
+		}
+	}
+
+
+	void Task10()
+	{
+		int x = 1, y = 5, z = 7;
 
 		if (x > 0 && y > 0 && z > 0) // проверяем что значения не равны 0
 		{
@@ -544,11 +567,52 @@ else
 				if (z < x + y) { printf("z < x + y отсюда следует x, y, z могут быть сторонами треугольника\n\n"); }
 				else { printf("false\n\n"); }
 			}
-			
+
 		}
-		else { printf("Одно из введенных значений x, y, z = 0 \n\n"); } */
+		else { printf("Одно из введенных значений x, y, z = 0 \n\n"); }
+	}
 
-/// How to use bool I don't know. Please show me how to use bool.
 
-system("pause");
-}
+	
+	int main()			// Эта строка сообщает компилятору, что есть функция с именем main
+	{
+		setlocale(LC_ALL, ""); //  подключает ввозможность вывода текста кириллицей
+		srand(time(NULL));
+
+		int task;
+		int flag;
+
+	start:
+
+		printf("\nEnter number of Task from 1 to 10 => ");
+		scanf_s("%d", &task);
+
+		switch (task)
+		{
+		case 1: {(Task1 ()); }break;
+		case 2: {(Task2 ()); }break;
+		case 3: {(Task3 ()); }break;
+		case 4: {(Task4 ()); }break;
+		case 5: {(Task5 ()); }break;
+		case 6: {(Task6 ()); }break;
+		case 7: {(Task7 ()); }break;
+		case 8: {(Task8 ()); }break;
+		case 9: {(Task9 ()); }break;
+		case 10: {(Task10 ()); }break;
+
+		default:
+			break;
+		}
+
+		{
+			printf("\nDo You want to continue... 0/1 \n");
+			scanf_s("%d", &flag);
+			if (flag == 1)
+				goto start;
+
+			system("pause");
+		}
+	
+
+			/// How to use bool I don't know. Please show me how to use bool.
+	}
