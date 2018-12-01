@@ -358,7 +358,7 @@ printf("144 / (x * y) = %d \n", 144 / (x * y));
 	}
 
 
-	void Task6() //var 2 - ok использовал логическое И - && и цикл для проврки всех вариантов
+	void Task6() //var 2 - ok использовал логическое И - && и цикл для проврки всех 7 вариантов
 	{
 		int a, b, c, count = 1;
 
@@ -373,20 +373,28 @@ printf("144 / (x * y) = %d \n", 144 / (x * y));
 			printf("Enter c = ");
 			scanf_s("%d", &c);
 
-
-			if (a < b && a < c)
+			if (a == b && a == c)
+			{printf("\nНаименьшего из введенных значений нет, т.к. a,b,c равны между собой\n\n\n");}
+			
+			else if(a == b && a < c)
+			{printf("\nНаименьшего из введенных значений нет, т.к. введено два одинаковых минимальных значения\n\n\n");}
+			else if (b == c && b < a)
+			{printf("\nНаименьшего из введенных значений нет, т.к. введено два одинаковых минимальных значения\n\n\n");}
+			else if (c == a && c < b)
+			{printf("\nНаименьшего из введенных значений нет, т.к. введено два одинаковых минимальных значения\n\n\n");}
+			
+			else
 			{
-				printf("\na=%d наименьшее из введенных значений a,b,c\n\n\n", a);
+				if (a < b && a < c)
+				{printf("\na=%d наименьшее из введенных значений a,b,c\n\n\n", a);}
+				
+				if (a > b && c > b)
+				{printf("\nb=%d наименьшее из введенных значений a,b,c\n\n\n", b);}
+				
+				if (a > c && b > c)
+				{printf("\nc=%d наименьшее из введенных значений a,b,c\n\n\n", c);}
 			}
-			if (a > b && c > b)
-			{
-				printf("\nb=%d наименьшее из введенных значений a,b,c\n\n\n", b);
-			}
-			if (a > c && b > c)
-			{
-				printf("\nc=%d наименьшее из введенных значений a,b,c\n\n\n", c);
-			}
-		} while (count < 4);
+		} while (count < 8);
 	}
 
 	/* // Task7() тренировка
@@ -432,7 +440,7 @@ printf("144 / (x * y) = %d \n", 144 / (x * y));
 		} while (count < 4);
 	*/
 
-	void Task7() //var 2 - ok использовал логическое И - && и цикл для проврки всех вариантов 
+	void Task7() //var 2 - ok использовал логическое И - && и цикл для проврки всех 7 вариантов
 	{
 		int a, b, c, count = 1;
 
@@ -447,23 +455,42 @@ printf("144 / (x * y) = %d \n", 144 / (x * y));
 			printf("Enter c = ");
 			scanf_s("%d", &c);
 
-
-			if (a > b && a > c)
+			if (a == b && a == c)
 			{
-				printf("\na=%d наибольшее из введенных значений a,b,c\n\n\n", a);
+				printf("\nНаибольшего из введенных значений нет, т.к. a,b,c равны между собой\n\n\n");
 			}
 
-			if (b > a && b > c)
+			else if (a == b && a > c)
 			{
-				printf("\nb=%d наибольшее из введенных значений a,b,c\n\n\n", b);
+				printf("\nНаибольшего из введенных значений нет, т.к. введено два одинаковых наибольших значения\n\n\n");
+			}
+			else if (b == c && b > a)
+			{
+				printf("\nНаибольшего из введенных значений нет, т.к. введено два одинаковых наибольших значения\n\n\n");
+			}
+			else if (c == a && c > b)
+			{
+				printf("\nНаибольшего из введенных значений нет, т.к. введено два одинаковых наибольших значения\n\n\n");
 			}
 
-			if (c > a && c > b)
+			else
 			{
-				printf("\nc=%d наибольшее из введенных значений a,b,c\n\n\n", c);
-			}
+				if (a > b && a > c)
+				{
+					printf("\na=%d наибольшее из введенных значений a,b,c\n\n\n", a);
+				}
 
-		} while (count < 4);
+				if (b > a && b > c)
+				{
+					printf("\nb=%d наибольшее из введенных значений a,b,c\n\n\n", b);
+				}
+
+				if (c > a && c > b)
+				{
+					printf("\nc=%d наибольшее из введенных значений a,b,c\n\n\n", c);
+				}
+			}
+		} while (count < 8);
 	}
 
 										
@@ -513,61 +540,78 @@ printf("144 / (x * y) = %d \n", 144 / (x * y));
 	void Task8()
 	{
 
-		int x = 2, y = 2, z = 4;
+		// int x = 0, y = 3, z = 3;
+		
+		start:
 
-		if (pow(x, 2) + pow(y, 2) == pow(z, 2))
-		{
-			printf("true\n");
-		}
-		else { printf("false\n"); }
+				int x = 1 + rand() % 5;
+				int y = 1 + rand() % 5;
+				int z = 1 + rand() % 5;
+				printf("\nСлучайные числа x=%d, y=%d, z=%d \n", x, y, z);
+
+				if (pow(x, 2) + pow(y, 2) == pow(z, 2))
+				{
+					printf("\nФормула x^2 + y^2 = z^2 при указанных значения = true\n\n");
+				}
+				else { printf("\nФормула x^2 + y^2 = z^2 при указанных значения = false\n\n"); goto start; }
+	
 	}
 
 	void Task9()
 	{
-
-		int x = 2, y = 2;
+		
+		//int x = 2, y = 2;
+		int x = 1 + rand() % 5;
+		int y = 1 + rand() % 5;
 
 		if (x%y == 0 && y%x == 0)
 		{
-			printf("true\n");
+			printf("\nПри x=%d и y=%d, x/y и y/x делятся без остатка  => true\n\n", x,y);
 		}
 		else
 		{
-			printf("false\n");
+			printf("\nПри x=%d и y=%d, x/y и y/x делятся без остатка  => false\n\n", x, y);
 		}
+		
 	}
 
 
 	void Task10()
 	{
-		int x = 1, y = 5, z = 7;
+		//int x = 1, y = 5, z = 7;
 
-		if (x > 0 && y > 0 && z > 0) // проверяем что значения не равны 0
+		int x = 1 + rand() % 5;
+		int y = 1 + rand() % 5;
+		int z = 1 + rand() % 5;
+		printf("\nСлучайные числа x=%d, y=%d, z=%d \n\n", x, y, z);
+
+
+		if (x > 0 && y > 0 && z > 0) // проверяем что значения больше 0
 		{
 			{
 				if (x > y && x > z)
 				{
-					if (x < y + z) { printf(" x < y + z отсюда следует x, y, z могут быть сторонами треугольника\n\n"); }
-					else { printf("false\n\n"); }
+					if (x < (y + z)) { printf(" x < (y + z) отсюда следует x, y, z могут быть сторонами треугольника => true\n\n"); }
+					else { printf("\nx, y, z не могут быть сторонами треугольника => false\n\n"); }
 				}
 			}
 
 
 			if (y > x && y > z)
 			{
-				if (y < x + z) { printf(" y < x + z отсюда следует  x, y, z могут быть сторонами треугольника\n\n"); }
-				else { printf("false\n\n"); }
+				if (y < (x + z)) { printf(" y < (x + z) отсюда следует  x, y, z могут быть сторонами треугольника => true\n\n"); }
+				else { printf("\nx, y, z не могут быть сторонами треугольника => false\n\n"); }
 			}
 
 
 			if (z > x && z > y)
 			{
-				if (z < x + y) { printf("z < x + y отсюда следует x, y, z могут быть сторонами треугольника\n\n"); }
-				else { printf("false\n\n"); }
+				if (z < (x + y)) { printf("z < (x + y) отсюда следует x, y, z могут быть сторонами треугольника => true\n\n"); }
+				else { printf("\nx, y, z не могут быть сторонами треугольника = > false\n\n"); }
 			}
 
 		}
-		else { printf("Одно из введенных значений x, y, z = 0 \n\n"); }
+		else { printf("\nОдно из введенных значений (x, y, z) = 0 \n\n"); }
 	}
 
 
@@ -612,5 +656,7 @@ printf("144 / (x * y) = %d \n", 144 / (x * y));
 		}
 	
 
-			/// How to use bool I don't know. Please show me how to use bool.
+			
 	}
+
+	/// How to use bool I don't know. Please show me how to use bool.
